@@ -18,5 +18,5 @@ python nhlcsscrape.py file_name
 ```
 `file_name` will be the name you want the pipe delimited output
 file to be called. If you have any problems or questions feel free
-to email me or contact me on twitter [@matt_barlowe]. Hope you
-enjoy!
+to email me or contact me on twitter [@matt_barlowe](https://twitter.com/matt_barlowe).
+Hope you enjoy!
