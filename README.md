@@ -11,8 +11,12 @@ rankings are missing data.
 
 The easiest way to run the script is to create a virtual envrionment
 and clone the repo into the directory you want using these steps.
+These are native for a Mac/Linux system, if you are on Windows they
+*should* work but I can't make any promises.
+
 ```bash
 git clone https://github.com/mcbarlowe/NHLcsscrape.git
+cd NHLcsscrape
 pip install requirements.txt
 python nhlcsscrape.py file_name
 ```
