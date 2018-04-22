@@ -3,7 +3,6 @@ import datetime
 import bs4
 import pandas as pd
 import requests
-import numpy as np
 
 def clean_height(value):
     '''
@@ -24,7 +23,7 @@ def clean_height(value):
         value = float(value_list[0]) + value_list[1]
         value = round(value, 2)
     except IndexError as ex:
-        value = np.nan
+        value = ''
 
     return value
 
