@@ -40,9 +40,7 @@ def clean_name(value):
     full_name - name in first_name, last_name order
     '''
     value_list = value.split(',')
-    print(value_list)
     full_name = '{} {}'.format(value_list[1], value_list[0])
-    print(full_name)
 
     return full_name
 
@@ -131,24 +129,19 @@ def main():
     years = list(range(2008, date.year + 1))
     headers = scrape_css_headers()
     for year in years:
-        print(year)
+        print('Scraping NHL Draft year: {}'.format(year))
         for player_type in category:
-            print(player_type)
             new_rankings_len = 50
             page = 1
             while new_rankings_len >= 50:
-                print(new_rankings_len)
                 new_rankings = scrape_css_rankings(player_type, year, str(page))
                 new_rankings_len = len(new_rankings)
                 for rank in new_rankings:
                     rankings.append(rank)
                 page += 1
-    print(rankings)
     rankings_df = pd.DataFrame(rankings, columns=headers)
-    print(rankings_df.head())
     rankings_df['Height'] = rankings_df['Height'].astype('str').apply(clean_height)
     rankings_df['Player'] = rankings_df['Player'].astype('str').apply(clean_name)
-    print(rankings_df.head())
     rankings_df.to_csv(filename, sep='|', index=False)
 
 if __name__ == '__main__':
